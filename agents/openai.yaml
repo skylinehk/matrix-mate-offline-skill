@@ -1,0 +1,18 @@
+interface:
+  display_name: "Matrix Mate Offline"
+  short_description: "Parse ITA Matrix links and audit fare rules with a local Matrix Mate runtime"
+  default_prompt: "Use $matrix-mate-offline to parse an ITA Matrix itinerary link, audit fare rules, or search ITA Matrix in the browser and then verify the resulting itinerary with Matrix Mate."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "matrix-mate-offline-local"
+      description: "Matrix Mate local stdio MCP server"
+      transport: "stdio"
+      command: "node"
+      args:
+        - "scripts/run-offline-mcp.mjs"
+      cwd: "."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,26 @@
+{
+  "name": "matrix-mate-offline-skill",
+  "version": "1.0.0",
+  "description": "Offline-first Matrix Mate skill bundle for parsing ITA Matrix itineraries via local stdio MCP",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "openclaw-skill",
+    "mcp",
+    "travel",
+    "ita-matrix",
+    "fare-rules"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "mcp": "node scripts/run-offline-mcp.mjs",
+    "mcp:config": "node scripts/print-offline-mcp-config.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^4.3.6"
+  }
+}
