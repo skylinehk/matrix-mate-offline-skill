@@ -1,7 +1,7 @@
 interface:
-  display_name: "Matrix Mate Offline"
-  short_description: "Parse ITA Matrix links and audit fare rules with a local Matrix Mate runtime"
-  default_prompt: "Use $matrix-mate-offline to parse an ITA Matrix itinerary link, audit fare rules, or search ITA Matrix in the browser and then verify the resulting itinerary with Matrix Mate."
+  display_name: "Matrix Mate - ITA Matrix Flight Search and Parse Tool"
+  short_description: "Search ITA Matrix flights in browser and parse itinerary links with local Matrix Mate MCP"
+  default_prompt: "Use $matrix-mate-offline (Matrix Mate - ITA Matrix Flight Search and Parse Tool) to run ITA Matrix search + parse flows, fare-rule audits, and traveler-safe itinerary summaries."
 
 dependencies:
   tools:

@@ -1,7 +1,7 @@
 {
   "name": "matrix-mate-offline-skill",
   "version": "1.0.0",
-  "description": "Offline-first Matrix Mate skill bundle for parsing ITA Matrix itineraries via local stdio MCP",
+  "description": "Matrix Mate - ITA Matrix Flight Search and Parse Tool (offline local MCP bundle)",
   "private": false,
   "type": "module",
   "license": "MIT",

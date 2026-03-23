@@ -1,4 +1,4 @@
-# Matrix Mate Offline Skill for ITA Matrix Parsing, Fare Rule Audits, and Browser-Assisted Search
+# Matrix Mate - ITA Matrix Flight Search and Parse Tool
 
 Matrix Mate Offline is an offline-first Codex skill for turning ITA Matrix itinerary links into traveler-safe itinerary summaries, fare rule audits, discrepancy reviews, and export-ready trip output. It pairs a local Matrix Mate app with a local MCP runtime so agents can parse Matrix links, inspect trip details, export traveler and agent summaries, and use browser automation to search ITA Matrix before handing the resulting itinerary back into Matrix Mate for verification.
 

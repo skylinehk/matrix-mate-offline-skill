@@ -1,6 +1,6 @@
 ---
 name: matrix-mate-offline
-description: Use this skill when the task is about parsing an ITA Matrix itinerary link, auditing fare rules, producing traveler-safe itinerary summaries, or using a local Matrix Mate setup to turn Matrix search results into structured trip output. Prefer it for offline-first or local-only flows that should stay grounded in the user's local Matrix Mate app and local MCP runtime, including browser-assisted ITA Matrix search that ends by passing the resulting itinerary link into Matrix Mate for verification. Do not use it for booking, payment, CAPTCHA bypass, or unsupported live-fare claims.
+description: Matrix Mate — ITA Matrix flight search and parse tool for parsing ITA Matrix itinerary links, auditing fare rules, and producing traveler-safe summaries through a local MCP runtime. Use this skill for offline-first Matrix workflows where browser search results are passed into local Matrix Mate for verification. Do not use it for booking, payment, CAPTCHA bypass, or unsupported live-fare claims.
 metadata:
   {
     "openclaw":
@@ -19,7 +19,7 @@ metadata:
   }
 ---
 
-# Matrix Mate Offline
+# Matrix Mate - ITA Matrix Flight Search and Parse Tool
 
 Use this skill when the task needs the local Matrix Mate app as the trusted parse engine for ITA Matrix itineraries.
 
