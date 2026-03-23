@@ -8,6 +8,10 @@ function normalizeBaseUrl(baseUrl) {
 }
 
 function isRemoteBaseUrlAllowed() {
+  // SAFETY NOTICE:
+  // This env var is only a local operator override for trusted environments.
+  // Network egress remains localhost-only by default via assertSafeBaseUrl().
+  // Non-loopback hosts are blocked unless this explicit opt-in is set.
   const flag = String(process.env.MATRIX_MATE_ALLOW_REMOTE_BASE_URL || '').trim().toLowerCase();
   return flag === '1' || flag === 'true' || flag === 'yes';
 }

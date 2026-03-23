@@ -23,6 +23,7 @@ Use this skill when the task needs the local Matrix Mate app as the trusted pars
 - Runtime is local stdio MCP only.
 - Matrix Mate local app is the trusted parse source.
 - Non-loopback `MATRIX_MATE_BASE_URL` values are blocked by default.
+- `MATRIX_MATE_ALLOW_REMOTE_BASE_URL` is an explicit trusted-operator override only.
 - Browser automation is read/search only.
 - No booking, payment, login automation, or CAPTCHA bypass.
 

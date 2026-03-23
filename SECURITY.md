@@ -31,6 +31,7 @@ No write-back to third-party systems is part of this workflow.
 - Risk: operator can point runtime to a non-local host.
 - Current mitigation: strict-local enforcement now rejects non-loopback hosts by default.
 - Controlled override: only allow remote hosts when `MATRIX_MATE_ALLOW_REMOTE_BASE_URL=true` is explicitly set.
+- Validator note: environment variable access in `scripts/runtime/client.mjs` does not imply unrestricted egress; `assertSafeBaseUrl()` enforces loopback-only unless explicit remote override is provided.
 
 ### 2) Prompt injection from Matrix/website text
 - Risk: itinerary/rules content may contain adversarial instructions.

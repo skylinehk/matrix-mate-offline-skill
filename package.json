@@ -2,7 +2,7 @@
   "name": "matrix-mate-offline-skill",
   "private": false,
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Matrix Mate - ITA Matrix Flight Search and Parse Tool (offline local MCP bundle)",
   "license": "MIT",
   "keywords": [
