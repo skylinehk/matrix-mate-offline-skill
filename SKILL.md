@@ -2,21 +2,16 @@
 name: matrix-mate-offline
 description: Matrix Mate — ITA Matrix flight search and parse tool for parsing ITA Matrix itinerary links, auditing fare rules, and producing traveler-safe summaries through a local MCP runtime. Use this skill for offline-first Matrix workflows where browser search results are passed into local Matrix Mate for verification. Do not use it for booking, payment, CAPTCHA bypass, or unsupported live-fare claims.
 metadata:
-  {
-    "openclaw":
-      {
-        "requires": { "bins": ["node", "npm"] },
-        "install":
-          [
-            {
-              "id": "node",
-              "kind": "node",
-              "package": "@modelcontextprotocol/sdk",
-              "label": "Install MCP runtime dependencies (run npm install in the skill bundle root)",
-            },
-          ],
-      },
-  }
+  openclaw:
+    requires:
+      bins:
+        - node
+        - npm
+    install:
+      - id: node
+        kind: node
+        package: "@modelcontextprotocol/sdk"
+        label: "Install MCP runtime dependencies (run npm install in the skill bundle root)"
 ---
 
 # Matrix Mate - ITA Matrix Flight Search and Parse Tool
@@ -27,6 +22,7 @@ Use this skill when the task needs the local Matrix Mate app as the trusted pars
 
 - Runtime is local stdio MCP only.
 - Matrix Mate local app is the trusted parse source.
+- Non-loopback `MATRIX_MATE_BASE_URL` values are blocked by default.
 - Browser automation is read/search only.
 - No booking, payment, login automation, or CAPTCHA bypass.
 

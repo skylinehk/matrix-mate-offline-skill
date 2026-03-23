@@ -5,7 +5,8 @@ Use the local Matrix Mate app as the trusted parse engine.
 ## Expected local app URL
 
 - Default base URL: `http://127.0.0.1:3000`
-- Override with `MATRIX_MATE_BASE_URL`
+- Optional override: `MATRIX_MATE_BASE_URL`
+- Safety default: non-loopback hosts are rejected unless `MATRIX_MATE_ALLOW_REMOTE_BASE_URL=true`
 
 ## Start the local app
 

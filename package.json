@@ -1,9 +1,9 @@
 {
   "name": "matrix-mate-offline-skill",
-  "version": "1.0.0",
-  "description": "Matrix Mate - ITA Matrix Flight Search and Parse Tool (offline local MCP bundle)",
   "private": false,
   "type": "module",
+  "version": "1.0.2",
+  "description": "Matrix Mate - ITA Matrix Flight Search and Parse Tool (offline local MCP bundle)",
   "license": "MIT",
   "keywords": [
     "openclaw-skill",

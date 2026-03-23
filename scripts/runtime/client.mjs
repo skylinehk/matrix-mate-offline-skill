@@ -1,8 +1,40 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+const LOOPBACK_HOSTS = new Set(['127.0.0.1', 'localhost', '::1']);
+
 function normalizeBaseUrl(baseUrl) {
   return String(baseUrl || 'http://127.0.0.1:3000').replace(/\/$/u, '');
+}
+
+function isRemoteBaseUrlAllowed() {
+  const flag = String(process.env.MATRIX_MATE_ALLOW_REMOTE_BASE_URL || '').trim().toLowerCase();
+  return flag === '1' || flag === 'true' || flag === 'yes';
+}
+
+function assertSafeBaseUrl(baseUrl) {
+  let parsedUrl;
+  try {
+    parsedUrl = new URL(baseUrl);
+  } catch {
+    throw new Error(`Invalid MATRIX_MATE_BASE_URL: ${baseUrl}`);
+  }
+
+  if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+    throw new Error('MATRIX_MATE_BASE_URL must use http or https protocol.');
+  }
+
+  if (LOOPBACK_HOSTS.has(parsedUrl.hostname)) {
+    return;
+  }
+
+  if (isRemoteBaseUrlAllowed()) {
+    return;
+  }
+
+  throw new Error(
+    `Refusing non-loopback MATRIX_MATE_BASE_URL (${baseUrl}). Set MATRIX_MATE_ALLOW_REMOTE_BASE_URL=true only if you explicitly trust the remote host.`,
+  );
 }
 
 export function resolveSkillRoot(startCwd = process.cwd()) {
@@ -21,6 +53,7 @@ export function resolveSkillRoot(startCwd = process.cwd()) {
 
 export function createMatrixMateClient({ baseUrl = process.env.MATRIX_MATE_BASE_URL, fetchImpl = fetch } = {}) {
   const normalizedBaseUrl = normalizeBaseUrl(baseUrl);
+  assertSafeBaseUrl(normalizedBaseUrl);
 
   async function requestJson(urlPath, init = {}) {
     const response = await fetchImpl(`${normalizedBaseUrl}${urlPath}`, {

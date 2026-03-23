@@ -36,10 +36,6 @@ After install, run `npm install` in the bundle root, then print the local MCP co
 node scripts/print-offline-mcp-config.mjs
 ```
 
-## Release status
-
-This bundle is structured for marketplace publication (skills.sh + ClawHub) with a local-only MCP runtime and explicit security notes.
-
 ## Install on ClawHub
 
 Package the same bundle directory for ClawHub/OpenClaw publication.

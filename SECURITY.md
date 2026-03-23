@@ -29,8 +29,8 @@ No write-back to third-party systems is part of this workflow.
 
 ### 1) SSRF/local target abuse via `MATRIX_MATE_BASE_URL`
 - Risk: operator can point runtime to a non-local host.
-- Current mitigation: defaults to localhost and documentation states local-only intent.
-- Recommended hardening: add optional strict-local mode that rejects non-loopback base URLs.
+- Current mitigation: strict-local enforcement now rejects non-loopback hosts by default.
+- Controlled override: only allow remote hosts when `MATRIX_MATE_ALLOW_REMOTE_BASE_URL=true` is explicitly set.
 
 ### 2) Prompt injection from Matrix/website text
 - Risk: itinerary/rules content may contain adversarial instructions.
